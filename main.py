@@ -1,21 +1,23 @@
-from agent.llm import chat
+from agent.planner import create_plan
 
 
 def main():
 
-    print("MiniCursor启动成功")
+    print("MiniCursor Planner启动")
+
 
     while True:
 
-        user_input = input("\nYou: ")
+        user_input = input("\n需求: ")
 
         if user_input == "exit":
             break
 
-        answer = chat(user_input)
 
-        print("\nMiniCursor:")
-        print(answer)
+        plan = create_plan(user_input)
+
+        print("\n规划结果:")
+        print(plan)
 
 
 if __name__ == "__main__":
