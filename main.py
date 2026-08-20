@@ -1,26 +1,14 @@
-from tools.file_tool import create_file
+from tools.runner import run_python
 
 
 def main():
 
-    print("File Tool Test")
-
-
-    code = """
-print("Hello MiniCursor")
-"""
-
-
-    path = create_file(
-        "test.py",
-        code
+    result = run_python(
+        "test.py"
     )
 
 
-    print(
-        "创建文件:",
-        path
-    )
+    print(result)
 
 
 if __name__ == "__main__":
