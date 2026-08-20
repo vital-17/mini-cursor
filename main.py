@@ -1,32 +1,26 @@
-from agent.planner import create_plan
-from agent.coder import generate_code
+from tools.file_tool import create_file
 
 
 def main():
 
-    print("MiniCursor Agent启动")
+    print("File Tool Test")
 
 
-    while True:
-
-        user_input = input("\n需求: ")
-
-        if user_input == "exit":
-            break
+    code = """
+print("Hello MiniCursor")
+"""
 
 
-        plan = create_plan(user_input)
+    path = create_file(
+        "test.py",
+        code
+    )
 
 
-        print("\n=====规划结果=====")
-        print(plan)
-
-
-        code = generate_code(plan)
-
-
-        print("\n=====代码生成=====")
-        print(code)
+    print(
+        "创建文件:",
+        path
+    )
 
 
 if __name__ == "__main__":
