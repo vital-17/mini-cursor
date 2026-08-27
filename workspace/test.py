@@ -1,2 +1,2 @@
 
-print("Hello MiniCursor")
+print(msq)

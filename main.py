@@ -1,15 +1,28 @@
-from tools.runner import run_python
+from agent.reviewer import review
 
 
 def main():
 
-    result = run_python(
-        "test.py"
+    code = """
+print(message)
+"""
+
+
+    result = {
+        "success":False,
+        "stderr":
+        "NameError: name 'message' is not defined"
+    }
+
+
+    answer = review(
+        code,
+        result
     )
 
 
-    print(result)
+    print(answer)
 
 
-if __name__ == "__main__":
+if __name__=="__main__":
     main()
