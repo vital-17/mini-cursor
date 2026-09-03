@@ -1,2 +1,2 @@
 
-print(msq)
+print("msq")

@@ -26,16 +26,16 @@
 - 优先生成简单可维护代码
 
 
-# Output
-
-输出：
-
-文件名：
-
-xxx.py
 
 
-代码：
+# Output Format
 
-```python
-xxx
+你必须只输出合法 JSON，不要输出 Markdown 代码块，不要添加任何额外解释。
+
+格式：
+
+{
+  "filename": "main.py",
+  "code": "完整的 Python 代码"
+}
+
