@@ -14,6 +14,7 @@ def run_python(filename):
 
     try:
 
+
         result = subprocess.run(
             [
                 "python",
@@ -21,6 +22,8 @@ def run_python(filename):
             ],
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             timeout=10
         )
 

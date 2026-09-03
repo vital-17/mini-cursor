@@ -1,35 +1,50 @@
-from agent.manager import AgentManager
+from agent.workflow import AgentWorkflow
+
 
 
 def main():
-    manager = AgentManager()
 
-    print("MiniCursor Agent")
-    print("输入 exit 退出")
+    workflow = AgentWorkflow()
+
+
+    print(
+        "MiniCursor Agent"
+    )
+
 
     while True:
-        requirement = input("\n需求: ").strip()
 
-        if requirement.lower() == "exit":
+        task = input(
+            "\n需求:"
+        )
+
+
+        if task == "exit":
             break
 
-        if not requirement:
-            continue
 
-        try:
-            result = manager.run(requirement)
+        state = workflow.run(task)
 
-            print("\n========== RESULT ==========")
-            print(f"文件: {result['filepath']}")
 
-            print("\n运行结果:")
-            print(result["execution"])
+        print("\n=====结果=====")
 
-            print("\n代码审查:")
-            print(result["review"])
+        print(
+            "文件:",
+            state.filename
+        )
 
-        except Exception as exc:
-            print(f"\nAgent运行失败: {exc}")
+
+        print(
+            "执行:",
+            state.execution
+        )
+
+
+        print(
+            "审查:",
+            state.review
+        )
+
 
 
 if __name__ == "__main__":
