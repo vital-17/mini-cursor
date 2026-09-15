@@ -15,3 +15,25 @@ An autonomous AI coding agent built with Python.
 - Python
 - LLM API
 - Agent Architecture
+-                   User
+                    │
+                    ▼
+               main.py
+                    │
+                    ▼
+          Agent Workflow
+                    │
+      ┌─────────────┼─────────────┐
+      ▼             ▼             ▼
+ Planner        Coder        Reviewer
+      │             │             ▲
+      └─────────────┼─────────────┘
+                    ▼
+                 AgentState
+                    │
+        ┌───────────┴───────────┐
+        ▼                       ▼
+   File Tool              Runner Tool
+        │                       │
+        ▼                       ▼
+   workspace              Python Process
